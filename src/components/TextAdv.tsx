@@ -66,111 +66,111 @@ function TextAdv(){
     useEffect(() => {
         setTimeout(() => { 
             setPath({
-                                text: 'You have been traveling for some time now, on your way to the villiage that last quest giver indicated.  Furthur down the road you see a person walking towards you.',
-                                stageOne: [
-                                    {   //you chose to say hi
-                                        text: 'You say hello. They respond, \"Hey! How are you my name is '+npc.current+'.\"',
-                                        stageTwo: [
+                text: 'You have been traveling for some time now, on your way to the villiage that last quest giver indicated.  Furthur down the road you see a person walking towards you.',
+                stageOne: [
+                    {   //you chose to say hi
+                        text: 'You say hello. They respond, \"Hey! How are you my name is '+npc.current+'.\"',
+                        stageTwo: [
+                            {
+                                //you ask about the village.
+                                text: 'they tell you about the dragon',
+                                stageThree: [
+                                    {
+                                        //say bye
+                                        text: "You say bye."
+                                    },
+                                    {
+                                        //You ask where they are going
+                                        text: 'They tell you that they are a merchant and that they have wares, if you have coin. I have swords and shields for sale.',
+                                        stageFour: [
                                             {
-                                                //you ask about the village.
-                                                text: 'they tell you about the dragon',
-                                                stageThree: [
-                                                    {
-                                                        //say bye
-                                                        text: "You say bye."
-                                                    },
-                                                    {
-                                                        //You ask where they are going
-                                                        text: 'They tell you that they are a merchant and that they have wares, if you have coin. I have swords and shields for sale.',
-                                                        stageFour: [
-                                                            {
-                                                                //Buy Sword
-                                                                text: 'You buy a Sword.',
-                                                                stageFive: [
-                                                                    {
-                                                                        //Buy Shield
-                                                                        text: 'You buy a Shield'
-                                                                    },
-                                                                    {
-                                                                        //Say bye confident
-                                                                        text: 'You say goodbye confidently'
-                                                                    }
-                                    
-                                                                ]
-                                                            },
-                                                            {
-                                                                //Buy Shield
-                                                                text: 'You buy a Shield.',
-                                                                stageFive: [
-                                                                    {
-                                                                        //Buy Sword
-                                                                        text: 'You buy a Sword'
-                                                                    },
-                                                                    {
-                                                                        //Say bye confident
-                                                                        text: 'You say goodbye confidently'
-                                                                    }
-                                    
-                                                                ]
-                                                            },
-                                                            {
-                                                                //Buy nothing
-                                                                text: "You don't purchase anything and continue on to the villiage. "
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                //You ask where they are going
-                                                text: 'They tell you that they are a merchant and that they have wares, if you have coin. I have swords and shields for sale.',
-                                                stageThree: [
-                                                    {
-                                                        //Buy Sword
-                                                        text: 'You buy a Sword.',
-                                                        stageFour: [
-                                                            {
-                                                                //Buy Shield
-                                                                text: 'You buy a Shield'
-                                                            },
-                                                            {
-                                                                //Say bye confident
-                                                                text: 'You say goodbye confidently'
-                                                            }
-
-                                                        ]
-                                                    },
+                                                //Buy Sword
+                                                text: 'You buy a Sword.',
+                                                stageFive: [
                                                     {
                                                         //Buy Shield
-                                                        text: 'You buy a Shield.',
-                                                        stageFour: [
-                                                            {
-                                                                //Buy Sword
-                                                                text: 'You buy a Sword'
-                                                            },
-                                                            {
-                                                                //Say bye confident
-                                                                text: 'You say goodbye confidently'
-                                                            }
-
-                                                        ]
+                                                        text: 'You buy a Shield'
                                                     },
                                                     {
-                                                        //Buy nothing
-                                                        text: "You don't purchase anything and continue on to the villiage. "
+                                                        //Say bye confident
+                                                        text: 'You say goodbye confidently'
                                                     }
+                    
                                                 ]
                                             },
                                             {
-                                                text: "You say bye."
+                                                //Buy Shield
+                                                text: 'You buy a Shield.',
+                                                stageFive: [
+                                                    {
+                                                        //Buy Sword
+                                                        text: 'You buy a Sword'
+                                                    },
+                                                    {
+                                                        //Say bye confident
+                                                        text: 'You say goodbye confidently'
+                                                    }
+                    
+                                                ]
+                                            },
+                                            {
+                                                //Buy nothing
+                                                text: "You don't purchase anything and continue on to the villiage. "
                                             }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                //You ask where they are going
+                                text: 'They tell you that they are a merchant and that they have wares, if you have coin. I have swords and shields for sale.',
+                                stageThree: [
+                                    {
+                                        //Buy Sword
+                                        text: 'You buy a Sword.',
+                                        stageFour: [
+                                            {
+                                                //Buy Shield
+                                                text: 'You buy a Shield'
+                                            },
+                                            {
+                                                //Say bye confident
+                                                text: 'You say goodbye confidently'
+                                            }
+
                                         ]
                                     },
                                     {
-                                        //you chose to ignore the person
-                                        text: "You choose to ignore the person."
+                                        //Buy Shield
+                                        text: 'You buy a Shield.',
+                                        stageFour: [
+                                            {
+                                                //Buy Sword
+                                                text: 'You buy a Sword'
+                                            },
+                                            {
+                                                //Say bye confident
+                                                text: 'You say goodbye confidently'
+                                            }
+
+                                        ]
+                                    },
+                                    {
+                                        //Buy nothing
+                                        text: "You don't purchase anything and continue on to the villiage. "
                                     }
                                 ]
+                            },
+                            {
+                                text: "You say bye."
+                            }
+                        ]
+                    },
+                    {
+                        //you chose to ignore the person
+                        text: "You choose to ignore the person."
+                    }
+                ]
             });
             setPathText(path?.text??"Loading...");
         }, 1000);
