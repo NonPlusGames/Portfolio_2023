@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import { useRef } from "react";
 
 function TextAdv(){
-    //construct [npc] variable which will update after making the api request.
     const inputText = useRef<HTMLInputElement>(null);
     const storyText = useRef<HTMLInputElement>(null);
     const npc= useRef<string>("default");
@@ -63,6 +62,11 @@ function TextAdv(){
             .catch(error => console.error(error));
     }, []);
 
+    /*
+    Creates the path tree of the game layered into various stages.  
+    The path object is dependant on the value of npc.
+    Will initially set the [pathText] variable to the first item on the tree. 
+    */
     useEffect(() => {
         setTimeout(() => { 
             setPath({
@@ -176,6 +180,7 @@ function TextAdv(){
         }, 1000);
     },[npc.current]);
     
+    //sets the displayed text, flags, and stage based off of what the input text of the player is.  
     function sendPath(){
         console.log(inputText.current);
         if(inputText.current){
@@ -297,9 +302,12 @@ function TextAdv(){
         }
     };
 
-    //Once the player has gone through all of the stages. This will
-    //check the various flags and provide the appropriate ending and append
-    //the text to the last message.
+    /*
+    Once the player has gone through all of the stages. This will
+    check the various flags and provide the appropriate ending and append
+    the text to the last message.
+    It is dependant on the state of the [stage] variable so placed within useEffect
+    */
     useEffect(()=>{
         console.log(stage);
         if(stage===10){
@@ -340,6 +348,7 @@ function TextAdv(){
         }
     },[stage]);
 
+    //function to return the appropriate hints based on what stage of the game the player is on.
     function sendHint(){
         if(stage==1)
         {
@@ -368,7 +377,7 @@ function TextAdv(){
     };
 
     return (
-        <div>
+        <>
             <h3>A Chance Encounter</h3>
             <div ref={storyText} id="text">{pathText}</div>
             <br />
@@ -380,7 +389,7 @@ function TextAdv(){
             </div>
             <br />
             <div id="hint">{hint}</div>
-        </div>
+        </>
     );
 }
 
