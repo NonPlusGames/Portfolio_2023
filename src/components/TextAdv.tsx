@@ -6,6 +6,7 @@ using a limited number of allowed responses.
 */
 import { useState, useEffect } from "react";
 import { useRef } from "react";
+import "./TextAdv.css";
 
 function TextAdv(){
     const inputText = useRef<HTMLInputElement>(null);
@@ -377,7 +378,7 @@ function TextAdv(){
     };
 
     return (
-        <>
+        <div>
             <h3>A Chance Encounter</h3>
             <div ref={storyText} id="text">{pathText}</div>
             <br />
@@ -389,7 +390,7 @@ function TextAdv(){
             </div>
             <br />
             <div id="hint">{hint}</div>
-        </>
+        </div>
     );
 }
 

@@ -1,0 +1,21 @@
+.nav{
+    height: 7em;
+}
+
+.nav li {
+    
+    
+    display: inline-block;
+    border-right: 1px solid;
+    /*border width is reccomended to use px*/
+    padding: 0.625em;
+    font-size: 1.875em;
+}
+
+.nav li:last-child {
+    border-right: none;
+}
+
+a.nav-link.active {
+    color: black;
+}

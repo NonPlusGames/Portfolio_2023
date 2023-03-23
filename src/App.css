@@ -1,0 +1,14 @@
+.container{
+transition: all 0.5s ease-out;
+height: 100vh;
+
+}
+
+.nav{
+    transition: all 0.5s ease-out;
+    
+}
+
+.tacomp{
+    transition: all 0.5s ease-out; 
+}
