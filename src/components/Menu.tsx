@@ -21,7 +21,7 @@ function Menu(props: Props){
 
     //css style for the size and position of this component after clicking on it the first time
     const menuStyles: CSSProperties = {
-        height: `4em `,
+        height: `6em `,
         transform : `scale(${targetScale})`
         
     };
@@ -38,15 +38,32 @@ function Menu(props: Props){
     */
     return (
         <>
+            <div className='creator container-fluid '>
+                <h3 className='text-center'>RAFAEL MOTA</h3>
+                <div className='row justify-content-center'><img  src='src/assets/Rafael.png'/></div>
+            </div>
+            
             <ul className="nav justify-content-center" style={isShrinking ? menuStyles : {}} onClick={handleShrink}>
                 <li className="nav-item" onClick={()=>{onSelectItem("menu"); console.log(currentPage);}}>
-                    <a className={currentPage==="menu" ? "nav-link active": "nav-link"} href="#">WEB</a>
+                    <a className={currentPage==="menu" ? "nav-link active": "nav-link"} href="#">
+                        <img  src='src/assets/ICON_WEB.png'/>
+                        <br />
+                        WEB
+                    </a>
                 </li>
                 <li className="nav-item" onClick={()=>{onSelectItem("game"); console.log(currentPage);}}>
-                    <a className={currentPage==="game" ? "nav-link active": "nav-link"}  href="#">GAME</a>
+                    <a className={currentPage==="game" ? "nav-link active": "nav-link"} href="#">
+                        <img  src='src/assets/ICON_GAME.png'/>
+                        <br />
+                        GAME
+                    </a>
                 </li>
                 <li className="nav-item" onClick={()=>{onSelectItem("edit"); console.log(currentPage);}}>
-                    <a className={currentPage==="edit" ? "nav-link active": "nav-link"} href="#">EDIT</a>
+                    <a className={currentPage==="edit" ? "nav-link active": "nav-link"} href="#">
+                        <img  src='src/assets/ICON_EDIT.png'/>
+                        <br />
+                        EDIT
+                    </a>
                 </li>
             </ul>
         </>

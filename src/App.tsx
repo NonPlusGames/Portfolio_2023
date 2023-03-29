@@ -18,9 +18,9 @@ function App(){
   
   return (
     <>
-      <div className= "container">
-      <Menu targetScale={.57} currentPage={currentPage} onSelectItem={handleSelectItem}/>
-      <div className="tacomp"><TextAdv /></div>
+      <div className= "portfolio container-fluid">
+        <Menu targetScale={.57} currentPage={currentPage} onSelectItem={handleSelectItem}/>
+        <div className="tacomp"><TextAdv /></div>
       </div>
     </>
   );

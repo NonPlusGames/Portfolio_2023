@@ -1,14 +1,26 @@
+.creator h3{   
+    color: #C3073F;
+    font-size: 10vh;
+}
+
+.creator img{
+    width: 10em;
+    
+}
+
 .nav{
-    height: 7em;
+    height: 40vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav li {
-    
-    
     display: inline-block;
-    border-right: 1px solid;
-    /*border width is reccomended to use px*/
-    padding: 0.625em;
+    padding: 1em;
+    border-right: 1px solid #4e4e50;
+    width: calc(100%/3);
     font-size: 1.875em;
 }
 
@@ -18,4 +30,8 @@
 
 a.nav-link.active {
     color: black;
+}
+
+.nav li img{
+    width: 3em;
 }
