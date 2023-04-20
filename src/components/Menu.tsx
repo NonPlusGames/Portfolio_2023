@@ -5,6 +5,7 @@ It receives potential transition positions and the current page as a prop.
 import { useState } from 'react';
 import { CSSProperties } from 'react';
 import './Menu.css';
+import { transform } from 'typescript';
 
 
 
@@ -21,11 +22,16 @@ function Menu(props: Props){
 
     //css style for the size and position of this component after clicking on it the first time
     const menuStyles: CSSProperties = {
-        height: `6em `,
-        transform : `scale(${targetScale})`
-        
+        height: `calc(20vh)`,
+        transform : `translateY(calc(-20vh/2)) scale(${targetScale})`,
     };
 
+    const imageStyle: CSSProperties={
+        transform: 'scale(0)',
+        height: '0'
+    }
+
+   
     //trigger transition animation 
     const handleShrink = () =>{
         setIsShrinking(true);
@@ -38,34 +44,40 @@ function Menu(props: Props){
     */
     return (
         <>
-            <div className='creator container-fluid '>
-                <h3 className='text-center'>RAFAEL MOTA</h3>
-                <div className='row justify-content-center'><img  src='src/assets/Rafael.png'/></div>
+            <div className='creator container-fluid' style={isShrinking ? {height: "25vh"} : {}}>
+                <div className='row' >
+                    <div className='col-sm-12'>
+                        <h3 className='text-center'>RAFAEL MOTA</h3>
+                    </div>
+                    <div className='selfie col-sm-12' style={isShrinking ? imageStyle : {}}>
+                        <img src='src/assets/Rafael.png'/>
+                    </div>
+                </div>
+                <div className='row' style={isShrinking ? menuStyles : {}} onClick={handleShrink}>
+                    <ul className="nav justify-content-center" >
+                        <li className={currentPage==="web" ? "nav-link active": "nav-link"} onClick={()=>{onSelectItem("web"); console.log(currentPage);}}>
+                            <a href="#">
+                                <img  src='src/assets/ICON_WEB.png'/>
+                                <br />WEB
+                            </a>
+                        </li>
+                        <li className={currentPage==="game" ? "nav-link active": "nav-link"} onClick={()=>{onSelectItem("game"); console.log(currentPage);}}>
+                            <a  href="#">
+                                <img  src='src/assets/ICON_GAME.png'/>
+                                <br />GAME
+                            </a>
+                        </li>
+                        <li className={currentPage==="edit" ? "nav-link active": "nav-link"} onClick={()=>{onSelectItem("edit"); console.log(currentPage);}}>
+                            <a  href="#">
+                                <img  src='src/assets/ICON_EDIT.png'/>
+                                <br />EDIT
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             
-            <ul className="nav justify-content-center" style={isShrinking ? menuStyles : {}} onClick={handleShrink}>
-                <li className="nav-item" onClick={()=>{onSelectItem("menu"); console.log(currentPage);}}>
-                    <a className={currentPage==="menu" ? "nav-link active": "nav-link"} href="#">
-                        <img  src='src/assets/ICON_WEB.png'/>
-                        <br />
-                        WEB
-                    </a>
-                </li>
-                <li className="nav-item" onClick={()=>{onSelectItem("game"); console.log(currentPage);}}>
-                    <a className={currentPage==="game" ? "nav-link active": "nav-link"} href="#">
-                        <img  src='src/assets/ICON_GAME.png'/>
-                        <br />
-                        GAME
-                    </a>
-                </li>
-                <li className="nav-item" onClick={()=>{onSelectItem("edit"); console.log(currentPage);}}>
-                    <a className={currentPage==="edit" ? "nav-link active": "nav-link"} href="#">
-                        <img  src='src/assets/ICON_EDIT.png'/>
-                        <br />
-                        EDIT
-                    </a>
-                </li>
-            </ul>
+            
         </>
     );
 }

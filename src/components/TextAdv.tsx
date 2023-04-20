@@ -382,11 +382,22 @@ function TextAdv(){
             <h3>A Chance Encounter</h3>
             <div ref={storyText} id="text">{pathText}</div>
             <br />
-            <div id="input">
-                <label htmlFor="text-input">&gt;</label>
-                <input ref={inputText} id="text-input" type="text"/>
-                <button onClick={sendPath} id="input-button">ENTER</button>
-                <button onClick={sendHint} id="hint-button">HINT</button>
+            <div id="input" className="container float-start">
+                
+                <div className="row gx-1">
+                    <div className="col-auto">
+                        <label htmlFor="text-input">&gt;</label>
+                    </div>
+                    <div className="col">
+                        <input ref={inputText} id="text-input" type="text"/>
+                    </div>         
+                    <div className="col-auto">
+                        <button className="btn btn-primary btn-sm" onClick={sendPath} id="input-button">ENTER</button>
+                    </div>
+                    <div className="col-auto">
+                        <button className="btn btn-secondary btn-sm" onClick={sendHint} id="hint-button">HINT</button>
+                    </div>
+                </div>
             </div>
             <br />
             <div id="hint">{hint}</div>
