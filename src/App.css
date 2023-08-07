@@ -1,23 +1,45 @@
+.portfolio {
+  min-height: 100vh;
+  /* background-color: #1a1a1d; */
+  width: 100%;
+}
 
-.portfolio{
-  
-    min-height: 100vh;
-    background-color: #1A1A1d;
+.nav {
+  transition: all 0.5s ease-out;
+}
+
+.tacomp {
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  background-color: bisque;
+  padding: 1em;
+}
+.tacomp input {
+  width: 98%;
+}
+
+.web img {
+  width: 90vw;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@media screen and (min-width: 976px) and (min-height: 601px) {
+  .web img {
     width: 100%;
-
+  }
+  .portfolio {
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+  }
+  .page {
+    width: 50vw;
+    padding-top: 50px;
+  }
 }
-
-.nav{
-    transition: all 0.5s ease-out;
-    
-}
-
-.tacomp{
-    transition: all 0.5s ease-out;
-    opacity: 0;
-    background-color: bisque;
-    padding: 1em; 
-}
- .tacomp input{
-   width: 98%;
- }
